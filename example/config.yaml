@@ -3,9 +3,19 @@ production:
     console: true
   test:
     console:
-      option1: true
-      option2: true
-  test.subtest: !!map {}
-  test.subtest.subsub2: !!map {}
+      format: '%d %h:%l %c- %m'
+  test.subtest:
+    error:
+      - console:
+          format:
+            name: 'default'
+            value: '%d %h:%l %c- %m'
+      - console:
+              format:
+                name: 'default'
+                value: '%d %c %m'
+  test.subtest.subtest:
+    console:
+      format: '%d %h:%l %c- %m'
 development:
   $extends: production

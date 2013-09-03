@@ -6,4 +6,6 @@ var LoggerFactory = require('../index');
 
 LoggerFactory.configure(__dirname + '/' + 'config.yaml').env().init();
 
-console.log(JSON.stringify(LoggerFactory._classes, null, '\t'));
+var logger = LoggerFactory.getLogger('test.subtest.subtest');
+
+logger.debug('Some Info');

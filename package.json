@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "a.config": "0.0.1",
-    "uuid": "~1.4.1"
+    "uuid": "~1.4.1",
+    "async": "~0.2.9"
   }
 }
