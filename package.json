@@ -1,0 +1,22 @@
+{
+  "name": "the.logger",
+  "version": "0.0.1",
+  "description": "Logger System For Node.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a696385/the.logger.git"
+  },
+  "keywords": [
+    "Logger"
+  ],
+  "author": "Andy <andy@away.name> (http://away.name/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a696385/the.logger/issues"
+  },
+  "dependencies": {
+    "a.config": "0.0.1",
+    "uuid": "~1.4.1"
+  }
+}

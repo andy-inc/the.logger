@@ -1,0 +1,11 @@
+production:
+  all:
+    console: true
+  test:
+    console:
+      option1: true
+      option2: true
+  test.subtest: !!map {}
+  test.subtest.subsub2: !!map {}
+development:
+  $extends: production
