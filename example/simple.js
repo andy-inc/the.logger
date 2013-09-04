@@ -4,8 +4,10 @@
 
 var LoggerFactory = require('../index');
 
-LoggerFactory.configure(__dirname + '/' + 'config.yaml').env().init();
+LoggerFactory.configure(__dirname + '/' + 'config.yaml', {wrapConsole: true}).env().init();
 
 var logger = LoggerFactory.getLogger('test.subtest');
 
 logger.debug('Some Info');
+
+console.info('wrap');

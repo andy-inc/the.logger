@@ -22,5 +22,11 @@ production:
     console:
       opt1: true
       format: '%d %h:%l %c- %m'
+    console:
+      $extends: :config.mongo
 development:
   $extends: production
+config:
+  default.format.processor: 'super'
+  mongo:
+    uri: 'mongodb://'
