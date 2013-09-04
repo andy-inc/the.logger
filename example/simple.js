@@ -8,8 +8,4 @@ LoggerFactory.configure(__dirname + '/' + 'config.yaml', {wrapConsole: true, roo
 
 var logger = LoggerFactory.getLogger('ssss');
 
-console.info('info');
-console.log('log');
-console.error('error');
-console.warn('warn');
-console.trace('trace');
+console.info('info', new Error('some error'), new Error('some error2'), {data: {attr1: true}});

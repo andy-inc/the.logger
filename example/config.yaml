@@ -26,6 +26,6 @@ development:
   $extends: production
 $config:
   default.format.processor: 'default'
-  default.format.value: '%date %hostname %message'
+  default.format.value: '%level %date: %hostname %module(%label) %message \n\nTrace:\n %trace \n\n Arg1:\n %args[0](10) \n\n Args(10):\n %args(10) \n\n Args:\n %args \n\n Errors:\n %errors \n\nCode: \n %code'
   mongo:
     uri: 'mongodb://'
