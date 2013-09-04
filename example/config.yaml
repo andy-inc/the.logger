@@ -12,7 +12,7 @@ production:
     console:
       opt1: true
   test.subtest:
-    error:
+    error,info,debug:
       - console:
           opt1: true
       - console:
