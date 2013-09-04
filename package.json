@@ -16,8 +16,11 @@
     "url": "https://github.com/a696385/the.logger/issues"
   },
   "dependencies": {
-    "a.config": "0.0.1",
+    "a.config": "0.0.2",
     "async": "~0.2.9",
     "uuid": "~1.4.1"
+  },
+  "devDependencies": {
+        "vows": "0.7.x"
   }
 }
