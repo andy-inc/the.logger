@@ -4,10 +4,12 @@
 
 var LoggerFactory = require('../index');
 
-LoggerFactory.configure(__dirname + '/' + 'config.yaml', {wrapConsole: true}).env().init();
+LoggerFactory.configure(__dirname + '/' + 'config.yaml', {wrapConsole: true, rootDir: __dirname, modules: {adapters: '../lib/adapters', formatProcessors: '../lib/format.processors'}}).env().init();
 
 var logger = LoggerFactory.getLogger('ssss');
 
-logger.debug('Some Info');
-
-console.info('wrap');
+console.info('info');
+console.log('log');
+console.error('error');
+console.warn('warn');
+console.trace('trace');
