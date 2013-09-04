@@ -1,7 +1,10 @@
-production:
+default:
+  $inner: false
   all:
     console:
       opt1: true
+production:
+  $extends: default
   test:
     console:
       opt1: true
@@ -10,23 +13,20 @@ production:
     error:
       - console:
           opt1: true
-          format:
-            name: 'default'
-            value: '%d %h:%l %c- %m'
+          format: '%d %h:%l %c- %m'
       - console:
           opt1: true
-          format:
-            name: 'default'
-            value: '%d %c %m'
+          format: '%d %c %m'
   test.subtest.subtest:
     console:
       opt1: true
       format: '%d %h:%l %c- %m'
     console:
-      $extends: :config.mongo
+      $extends: :$config.mongo
 development:
   $extends: production
-config:
-  default.format.processor: 'super'
+$config:
+  default.format.processor: 'default'
+  default.format.value: '%d %h %m'
   mongo:
     uri: 'mongodb://'
