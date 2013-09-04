@@ -1,0 +1,9 @@
+all:
+  error:
+    - console: true
+      file:
+        fileName: 'error.log'
+    - console: true
+test:
+  - console: true
+  - console: true

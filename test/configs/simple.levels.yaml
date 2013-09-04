@@ -1,0 +1,9 @@
+all:
+  info:
+    console: true
+  error:
+    console: true
+  debug:
+    console: true
+  fatal,warn:
+    console: true

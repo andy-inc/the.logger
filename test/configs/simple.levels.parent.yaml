@@ -1,0 +1,10 @@
+all:
+  error:
+    console: true
+    file:
+      fileName: 'error.log'
+test:
+  console: true
+test.subtest:
+  info:
+    console: true
