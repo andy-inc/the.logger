@@ -1,6 +1,9 @@
 default:
   $inner: false
   all:
+    file:
+      fileName: 'test.log'
+      encoding: 'ASCII'
     console:
       opt1: true
 production:
