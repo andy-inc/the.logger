@@ -11,25 +11,21 @@ production:
   test:
     console:
       opt1: true
-      format: '%d %h:%l %c- %m'
   test.subtest:
     error:
       - console:
           opt1: true
-          format: '%d %h:%l %c- %m'
       - console:
           opt1: true
-          format: '%d %c %m'
   test.subtest.subtest:
     console:
       opt1: true
-      format: '%d %h:%l %c- %m'
     console:
       $extends: :$config.mongo
 development:
   $extends: production
 $config:
   default.format.processor: 'default'
-  default.format.value: '%d %h %m'
+  default.format.value: '%date %hostname %message'
   mongo:
     uri: 'mongodb://'
