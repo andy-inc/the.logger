@@ -3,7 +3,7 @@ default:
   all:
     file:
       fileName: 'test.log'
-      encoding: 'ASCII'
+      encoding: 'UTF8'
     console:
       opt1: true
 production:
