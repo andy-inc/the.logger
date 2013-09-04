@@ -6,6 +6,7 @@ default:
       encoding: 'UTF8'
     console:
       opt1: true
+    syslog: true
 production:
   $extends: default
   test:

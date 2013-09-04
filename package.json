@@ -18,9 +18,13 @@
   "dependencies": {
     "a.config": "0.0.2",
     "async": "~0.2.9",
-    "uuid": "~1.4.1"
+    "uuid": "~1.4.1",
+    "bindings": "~1.1.1"
   },
   "devDependencies": {
-        "vows": "0.7.x"
+    "vows": "0.7.x"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild"
   }
 }
