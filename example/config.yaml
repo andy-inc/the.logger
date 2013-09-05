@@ -8,11 +8,16 @@ default:
       opt1: true
     syslog: true
   test.mongo:
-    info:
+    info,debug:
       mongo:
         $extends: :$config.mongo
         collection: 'info2'
-        ttl: 600
+        ttl: 10
+      syslog: true
+    error:
+      mongo:
+        $extends: :$config.mongo
+        ttl: 100
 production:
   $extends: default
   test:
@@ -39,4 +44,4 @@ $config:
     ttl: 3600
     format:
       name: 'mongo'
-      value: '%date'
+      value: '%level, %date, %module, %hostname, %args, %code, %trace, %errors, %stack'

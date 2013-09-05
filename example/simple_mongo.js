@@ -3,18 +3,28 @@
  */
 
 var util = require('util');
+var LoggerFactoryError = require('../lib/errors/LoggerFactoryError');
 
 global.dump = function() {
     var args = Array.prototype.slice.call(arguments);
-    console.log(util.inspect(args, false, 2, true));
+    console.log(util.inspect(args, false, 1, true));
 };
 
-var LoggerFactory = require('../index');
+var LoggerFactory = require('../index').configure(__dirname + '/' + 'config.yaml', {wrapConsole: false}).env().init();
 
-LoggerFactory.configure(__dirname + '/' + 'config.yaml', {wrapConsole: true, wrapUncaught: true, rootDir: __dirname, modules: {adapters: '../lib/adapters', formatProcessors: '../lib/format.processors'}}).env().init();
+var logger = LoggerFactory.getLogger('test.mongo');
 
-var logger = LoggerFactory.getLogger('ssss');
+//function test(err) {
+//    logger.info('test-logger', new Error('Test Error Message1'), err, { k: [0, '123', { d:9, l: [1,2,3] }], a:4, b: { c:9, f: { d:6, g: [1,2,3,4,5,6], p: { q:3, u: { z: [2,5,9] } } } } });
+//}
+//
+//function test2() {
+//    test(new LoggerFactoryError('Test Error Message2', this));
+//}
+//
+//test2();
 
-throw new Error('Uncaught');
 
-console.info('info', new Error('some error'), new Error('some error2'), {data: {attr1: true}});
+setInterval(function() {
+    logger.info('234');
+}, 1000);
