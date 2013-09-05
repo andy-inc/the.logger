@@ -18,6 +18,7 @@
   "dependencies": {
     "a.config": "0.0.2",
     "async": "~0.2.9",
+    "mongodb": "~1.3.19",
     "uuid": "~1.4.1",
     "bindings": "~1.1.1"
   },

@@ -7,6 +7,12 @@ default:
     console:
       opt1: true
     syslog: true
+  test.mongo:
+    info:
+      mongo:
+        $extends: :$config.mongo
+        collection: 'info2'
+        ttl: 600
 production:
   $extends: default
   test:
@@ -29,4 +35,8 @@ $config:
   default.format.processor: 'default'
   default.format.value: '%level %date: %hostname %module(%label) %message \n\nTrace:\n %trace \n\n Arg1:\n %args[0](10) \n\n Args(10):\n %args(10) \n\n Args:\n %args \n\n Errors:\n %errors \n\nCode: \n %code'
   mongo:
-    uri: 'mongodb://'
+    uri: 'mongodb://localhost:27030/the-logger'
+    ttl: 3600
+    format:
+      name: 'mongo'
+      value: '%date'
