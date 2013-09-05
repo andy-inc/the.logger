@@ -9,11 +9,11 @@ default:
     syslog: true
   test.mongo:
     info,debug:
-      - mongo:
-         $extends: :$config.mongo
-         collection: 'info2'
-         ttl: 10
-      - console: true
+#      console: false
+      mongo:
+       $extends: :$config.mongo
+       ttl: 10
+
     error:
       mongo:
         $extends: :$config.mongo
@@ -43,5 +43,5 @@ $config:
     uri: 'mongodb://localhost:27030/the-logger'
     ttl: 3600
     format:
-      name: 'mongo'
+      name: 'default'
       value: '%level, %date, %module, %hostname, %args, %code, %trace, %errors, %stack'
