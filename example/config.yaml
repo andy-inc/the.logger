@@ -9,11 +9,11 @@ default:
     syslog: true
   test.mongo:
     info,debug:
-      mongo:
-        $extends: :$config.mongo
-        collection: 'info2'
-        ttl: 10
-      syslog: true
+      - mongo:
+         $extends: :$config.mongo
+         collection: 'info2'
+         ttl: 10
+      - console: true
     error:
       mongo:
         $extends: :$config.mongo
