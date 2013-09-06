@@ -1,5 +1,13 @@
+$config:
+  default.format.processor: 'default'
+  default.format.value: '%level %date: %hostname %module(%label) %message \n\nTrace:\n %trace \n\n Arg1:\n %args[0](10) \n\n Args(10):\n %args(10) \n\n Args:\n %args \n\n Errors:\n %errors \n\nCode: \n %code'
+  mongo:
+    uri: 'mongodb://localhost:27030/the-logger'
+    ttl: 3600
+    format:
+      name: 'default'
+      value: '%level, %date, %module, %hostname, %args, %code, %trace, %errors, %stack'
 default:
-  $inner: false
   all:
     file:
       fileName: 'test.log'
@@ -11,15 +19,15 @@ default:
     info,debug:
 #      console: false
       mongo:
-       $extends: :$config.mongo
+       $extend: :$config.mongo
        ttl: 10
 
     error:
       mongo:
-        $extends: :$config.mongo
+        $extend: :$config.mongo
         ttl: 100
 production:
-  $extends: default
+  $extend: default
   test:
     console:
       opt1: true
@@ -33,15 +41,6 @@ production:
     console:
       opt1: true
     console:
-      $extends: :$config.mongo
+      $extend: :$config.mongo
 development:
-  $extends: production
-$config:
-  default.format.processor: 'default'
-  default.format.value: '%level %date: %hostname %module(%label) %message \n\nTrace:\n %trace \n\n Arg1:\n %args[0](10) \n\n Args(10):\n %args(10) \n\n Args:\n %args \n\n Errors:\n %errors \n\nCode: \n %code'
-  mongo:
-    uri: 'mongodb://localhost:27030/the-logger'
-    ttl: 3600
-    format:
-      name: 'default'
-      value: '%level, %date, %module, %hostname, %args, %code, %trace, %errors, %stack'
+  $extend: production
