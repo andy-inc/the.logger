@@ -23,9 +23,10 @@ default:
        ttl: 10
 
     error:
-      mongo:
-        $extend: :$config.mongo
-        ttl: 100
+      - mongo:
+          $extend: :$config.mongo
+          ttl: 100
+      - console: true
 production:
   $extend: default
   test:
