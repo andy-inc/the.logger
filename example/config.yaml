@@ -2,19 +2,18 @@ $config:
   default.format.processor: 'default'
   default.format.value: '%level %date: %hostname %module(%label) %message \n\nTrace:\n %trace \n\n Arg1:\n %args[0](10) \n\n Args(10):\n %args(10) \n\n Args:\n %args \n\n Errors:\n %errors \n\nCode: \n %code'
   mongo:
-    uri: 'mongodb://localhost:27030/the-logger'
+    uri: 'mongodb://localhost/the-logger'
     ttl: 3600
     format:
       name: 'default'
       value: '%level, %date, %module, %hostname, %args, %code, %trace, %errors, %stack'
 default:
   all:
-    file:
-      fileName: 'test.log'
-      encoding: 'UTF8'
-    console:
-      opt1: true
-    syslog: true
+    - file:
+        fileName: 'test.log'
+        encoding: 'UTF8'
+      console: false
+    - syslog: true
   test.mongo:
     info,debug:
 #      console: false
@@ -26,22 +25,5 @@ default:
       - mongo:
           $extend: :$config.mongo
           ttl: 100
-      - console: true
-production:
-  $extend: default
-  test:
-    console:
-      opt1: true
-  test.subtest:
-    error,info,debug:
-      - console:
-          opt1: true
-      - console:
-          opt1: true
-  test.subtest.subtest:
-    console:
-      opt1: true
-    console:
-      $extend: :$config.mongo
-development:
-  $extend: production
+      - console: false
+
