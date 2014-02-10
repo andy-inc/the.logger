@@ -1,31 +1,27 @@
 {
   "name": "the.logger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logger System For Node.js",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/a696385/the.logger.git"
+    "url": "https://github.com/andy-inc/the.logger.git"
   },
   "keywords": [
     "Logger"
   ],
-  "author": "Andy <andy@away.name> (http://away.name/)",
+  "author": "Andy <andy@sumskoy.com> (http://sumskoy.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/a696385/the.logger/issues"
+    "url": "https://github.com/andy-inc/the.logger/issues"
   },
   "dependencies": {
     "a.config": "0.0.3",
     "async": "~0.2.9",
     "mongodb": "~1.3.19",
-    "uuid": "~1.4.1",
-    "bindings": "~1.1.1"
+    "uuid": "~1.4.1"
   },
   "devDependencies": {
     "vows": "0.7.x"
-  },
-  "scripts": {
-    "install": "node-gyp rebuild"
   }
 }
